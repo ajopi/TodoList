@@ -1,0 +1,23 @@
+.main-container{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
+.add-container{
+    margin-top: 10px;
+}
+
+.btn-add{
+    border: none;
+    height: 35px;
+    background-color: teal;
+    color: wheat;
+    border-radius: 5px;
+}
+
+.container-activity{
+    margin-top: 10px; 
+}
