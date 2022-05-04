@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Ongoing = ({myData}) => {
-    // const [data, setData] = useState('');
-
-    useEffect(() => {
-        // console.log('data', data)
-    }, [myData])
-
-    
+   
   return (
     <>
         <div className='container py-5'>
