@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Create from './Components/Create';
 import Layout from './Components/Layout';
 import Ongoing from './Components/Ongoing';
+import Complete from './Components/Complete';
 import { data } from './data'
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
           </div>
         </div>
        <Ongoing myData={myData}/>
+       <Complete myData={myData} />
      </Layout>
     </>
   );
