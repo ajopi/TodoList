@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { addTodoList } from '../../Service';
 import { useForm } from 'react-hook-form';
 import './Create.css'
 
 const Create = ({myData, setMyData}) => {
-    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
-    // const [title, setTitle] = useState('');
-    // const [date, setDate] = useState('');
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (value) => {
-        // value.preventDefault()
         addTodoList(myData, setMyData, value.title, value.date);
         reset();
     }
