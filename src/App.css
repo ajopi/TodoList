@@ -6,6 +6,19 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
 }
+.bg-layout{
+  background-color: #5F6CDE;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 2rem;
+}
+.bg-container{
+  background-color:#3D359A;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+}
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 import { addTodoList } from '../../Service';
+import { useForm } from 'react-hook-form';
 import './Create.css'
 
 const Create = ({myData, setMyData}) => {
-    const [title, setTitle] = useState('');
-    const [date, setDate] = useState('');
+    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
+    // const [title, setTitle] = useState('');
+    // const [date, setDate] = useState('');
 
-    const handleSubmit = (value) => {
-        value.preventDefault()
-        addTodoList(myData, setMyData, title, date);
+    const onSubmit = (value) => {
+        // value.preventDefault()
+        addTodoList(myData, setMyData, value.title, value.date);
+        reset();
     }
 
   return (
       <>
         <div className='container py-5'>
             <div className='bg-create py-4 content-rounded'>
-                <div className='container bg-create-title rounded-pill p-2 w-50'>
+                <div className='container fw-bold bg-create-title rounded-pill p-2 w-50'>
                     Add To do List
                 </div>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='container w-100 d-flex flex-column align-items-center py-4 gap-4'>
                         <div className="input-group w-75 mb-3">
                             <span className="input-group-text bg-create-label">
@@ -29,8 +32,9 @@ const Create = ({myData, setMyData}) => {
                                 className="form-control bg-create-color" 
                                 placeholder="Title"
                                 name='title'
-                                onChange={(e) => setTitle(e.target.value)}
+                                // onChange={(e) => setTitle(e.target.value)}
                                 required
+                                {...register("title")}
                             />
                         </div>
                         <div className="input-group w-75 mb-3">
@@ -42,8 +46,9 @@ const Create = ({myData, setMyData}) => {
                                 className="form-control bg-create-color" 
                                 // placeholder="Date"
                                 name='date'
-                                onChange={(e) => setDate(e.target.value)}
+                                // onChange={(e) => setDate(e.target.value)}
                                 required
+                                {...register("date")}
                             />
                         </div>
                         <div className='d-flex justify-content-end w-75'>
